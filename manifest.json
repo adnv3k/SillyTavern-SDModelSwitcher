@@ -1,0 +1,11 @@
+{
+    "display_name": "SD Model Switcher",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "",
+    "author": "adnv3k",
+    "version": "1.0.0",
+    "homePage": "https://github.com/adnv3k/SillyTavern-SDModelSwitcher"
+}
