@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.0 - 2026-07-22
+
+- Running `/sd-model` with no argument now opens an interactive picker: a popup
+  listing every available model with a filter box, the current model marked, and
+  click-to-switch. Falls back to the old newline-separated list only when the
+  popup API can't be reached.
+
 ## 1.0.0 - 2026-07-22
 
 First release.

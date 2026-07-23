@@ -49,7 +49,7 @@ To check it loaded, open the browser console (F12) and look for:
 ## Usage
 
 ```
-/sd-model                          list available models
+/sd-model                          open a picker to choose from the available models
 /sd-model illustrious                   switch to the first model containing "illustrious"
 /sd-model quiet=true wai           switch without a toast
 /sd-model settle=1500 juggernaut   switch, then wait 1500ms before returning
@@ -61,7 +61,7 @@ Aliases: `/imagine-model`, `/img-model`.
 
 | Argument | Type | Default | Description |
 |---|---|---|---|
-| *(unnamed)* | string | | Model name, or a unique substring of one (case-insensitive). Leave it off to list models. |
+| *(unnamed)* | string | | Model name, or a unique substring of one (case-insensitive). Leave it off to open the model picker. |
 | `quiet` | boolean | `false` | Don't show toast notifications. |
 | `settle` | number | `0` | Milliseconds to wait after switching before the command returns. |
 
@@ -69,10 +69,12 @@ The unnamed argument is matched first as an exact (case-insensitive) match on an
 option's text or value, then as a substring. First match wins, so a short
 substring like `illustrious` or `jugg` is usually enough.
 
-With no argument the command returns a newline-separated list of model names;
-pipe it into `/echo` to see it (`/sd-model | /echo`). With an argument it returns
-the selected model's name, or an empty string if nothing matched, so it won't
-break a Quick Reply chain.
+With no argument the command opens a popup listing every available model, with a
+filter box at the top; the current model is marked and clicking one switches to
+it. Cancelling returns an empty string. (If the popup API can't be reached — an
+unusually old or stripped ST build — it falls back to returning a newline-separated
+list you can pipe into `/echo`.) With an argument it returns the selected model's
+name, or an empty string if nothing matched, so it won't break a Quick Reply chain.
 
 ## Quick Reply integration
 
